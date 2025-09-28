@@ -1,0 +1,49 @@
+# Teams Configuration for PageCloudv1
+# This file defines the team structure for the organization
+
+teams:
+  - name: core-developers
+    description: "Core development team"
+    privacy: closed
+    members:
+      - rootkit-original
+    repos:
+      xcloud-platform: admin
+      xcloud-cli: admin
+      repository-template: admin
+    
+  - name: frontend-team
+    description: "Frontend developers"
+    privacy: closed
+    parent: core-developers
+    repos:
+      xcloud-dashboard: write
+      xcloud-components: write
+    
+  - name: backend-team
+    description: "Backend developers" 
+    privacy: closed
+    parent: core-developers
+    repos:
+      xcloud-platform: write
+      xcloud-runtime: write
+      
+  - name: devops
+    description: "DevOps and Infrastructure"
+    privacy: closed
+    repos:
+      all: maintain
+    
+  - name: security-team
+    description: "Security and Compliance"
+    privacy: secret
+    repos:
+      all: read
+
+  - name: documentation-team
+    description: "Documentation and Content"
+    privacy: closed
+    repos:
+      xcloud-docs: write
+      xcloud-examples: write
+      xcloud-templates: write
