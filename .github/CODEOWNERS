@@ -1,0 +1,56 @@
+# CODEOWNERS - Define code review ownership for PageCloudv1 repositories
+
+# Global ownership - core team reviews everything by default
+* @PageCloudv1/core-developers
+
+# Frontend specific files
+*.js @PageCloudv1/frontend-team @PageCloudv1/core-developers
+*.ts @PageCloudv1/frontend-team @PageCloudv1/core-developers
+*.tsx @PageCloudv1/frontend-team @PageCloudv1/core-developers
+*.jsx @PageCloudv1/frontend-team @PageCloudv1/core-developers
+*.vue @PageCloudv1/frontend-team @PageCloudv1/core-developers
+*.html @PageCloudv1/frontend-team @PageCloudv1/core-developers
+*.css @PageCloudv1/frontend-team @PageCloudv1/core-developers
+*.scss @PageCloudv1/frontend-team @PageCloudv1/core-developers
+
+# Backend specific files
+*.py @PageCloudv1/backend-team @PageCloudv1/core-developers
+*.go @PageCloudv1/backend-team @PageCloudv1/core-developers
+requirements*.txt @PageCloudv1/backend-team
+pyproject.toml @PageCloudv1/backend-team
+go.mod @PageCloudv1/backend-team
+go.sum @PageCloudv1/backend-team
+Dockerfile* @PageCloudv1/backend-team @PageCloudv1/devops
+
+# Infrastructure and CI/CD
+.github/ @PageCloudv1/devops @PageCloudv1/core-developers
+*.yml @PageCloudv1/devops
+*.yaml @PageCloudv1/devops
+terraform/ @PageCloudv1/devops
+kubernetes/ @PageCloudv1/devops
+docker-compose*.yml @PageCloudv1/devops
+Containerfile* @PageCloudv1/devops
+*.dockerfile @PageCloudv1/devops
+
+# Documentation
+*.md @PageCloudv1/documentation-team
+docs/ @PageCloudv1/documentation-team
+README.md @PageCloudv1/core-developers @PageCloudv1/documentation-team
+SECURITY.md @PageCloudv1/security-team @PageCloudv1/core-developers
+CONTRIBUTING.md @PageCloudv1/documentation-team @PageCloudv1/core-developers
+
+# Security sensitive files
+SECURITY.md @PageCloudv1/security-team
+.github/workflows/ @PageCloudv1/devops @PageCloudv1/security-team
+*.env* @PageCloudv1/security-team @PageCloudv1/devops
+
+# Package manager files
+package.json @PageCloudv1/frontend-team @PageCloudv1/core-developers
+package-lock.json @PageCloudv1/frontend-team
+yarn.lock @PageCloudv1/frontend-team
+composer.json @PageCloudv1/backend-team
+Gemfile* @PageCloudv1/backend-team
+
+# License and legal
+LICENSE @PageCloudv1/core-developers
+CODE_OF_CONDUCT.md @PageCloudv1/core-developers
