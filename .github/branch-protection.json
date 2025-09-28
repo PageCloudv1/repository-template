@@ -1,0 +1,84 @@
+{
+  "branch_protection_rules": {
+    "main": {
+      "required_status_checks": {
+        "strict": true,
+        "contexts": [
+          "continuous-integration",
+          "security-scan", 
+          "code-review",
+          "test-suite",
+          "lint-check"
+        ]
+      },
+      "enforce_admins": true,
+      "required_pull_request_reviews": {
+        "required_approving_review_count": 2,
+        "dismiss_stale_reviews": true,
+        "require_code_owner_reviews": true,
+        "require_last_push_approval": true,
+        "bypass_pull_request_allowances": {
+          "users": [],
+          "teams": ["core-developers"],
+          "apps": []
+        }
+      },
+      "restrictions": {
+        "users": [],
+        "teams": ["core-developers", "devops"],
+        "apps": []
+      },
+      "allow_force_pushes": false,
+      "allow_deletions": false,
+      "block_creations": false,
+      "required_conversation_resolution": true,
+      "lock_branch": false,
+      "allow_fork_syncing": false,
+      "required_linear_history": false,
+      "allow_auto_merge": true,
+      "required_deployments": {
+        "environments": ["staging"]
+      }
+    },
+    "develop": {
+      "required_status_checks": {
+        "strict": true,
+        "contexts": [
+          "continuous-integration",
+          "test-suite"
+        ]
+      },
+      "enforce_admins": false,
+      "required_pull_request_reviews": {
+        "required_approving_review_count": 1,
+        "dismiss_stale_reviews": true,
+        "require_code_owner_reviews": false,
+        "require_last_push_approval": false
+      },
+      "restrictions": {
+        "users": [],
+        "teams": ["core-developers", "frontend-team", "backend-team"],
+        "apps": []
+      },
+      "allow_force_pushes": false,
+      "allow_deletions": false,
+      "required_conversation_resolution": true,
+      "allow_auto_merge": true
+    }
+  },
+  "default_branch": "main",
+  "merge_settings": {
+    "allow_squash_merge": true,
+    "allow_merge_commit": false,
+    "allow_rebase_merge": true,
+    "delete_branch_on_merge": true
+  },
+  "security_settings": {
+    "enable_automated_security_fixes": true,
+    "enable_vulnerability_alerts": true,
+    "enable_secret_scanning": true,
+    "enable_secret_scanning_push_protection": true,
+    "enable_dependency_graph": true,
+    "enable_dependabot_security_updates": true
+  }
+}
